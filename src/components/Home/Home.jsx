@@ -27,7 +27,7 @@ const Home = () => {
 
     console.log(posts, "all posts");
     return (
-        <Container maxW="1280px" mt="4">
+        <Container maxW="1280px" mt="4" mb="4">
             <>
                 {posts?.length > perPageCount && <Flex justifyContent="space-between" alignItems="center">
                     <Button colorScheme="red" disabled={page <= 1} onClick={() => setPage(prev => prev - 1)}>Prev</Button>
