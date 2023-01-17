@@ -25,7 +25,6 @@ const Home = () => {
         toast({ status: "error", title: error.message, duration: 3000 })
     }
 
-    console.log(posts, "all posts");
     return (
         <Container maxW="1280px" mt="4" mb="4">
             <>
