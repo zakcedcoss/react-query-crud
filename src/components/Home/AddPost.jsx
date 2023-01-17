@@ -1,8 +1,8 @@
 import { Flex, Heading, Stack, Toast, useToast } from '@chakra-ui/react'
 import { Form, Formik } from 'formik'
 import { InputControl, SubmitButton, TextareaControl } from 'formik-chakra-ui'
-import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { addPost, getSinglePost, updatePost } from '../../queryFunctions/queryFunctions'
+import { useMutation, useQueryClient } from 'react-query'
+import { addPost, updatePost } from '../../queryFunctions/queryFunctions'
 
 const AddPost = ({ isUpdate = false, id }) => {
     const cache = useQueryClient();
@@ -20,7 +20,6 @@ const AddPost = ({ isUpdate = false, id }) => {
             <Formik
                 initialValues={{ title: "", body: "" }}
                 onSubmit={(values, { resetForm }) => {
-                    console.log(resetForm);
                     isUpdate ?
                         mutateAsync({ title: values.title, body: values.body, id })
                         : mutateAsync({ title: values.title, body: values.body })

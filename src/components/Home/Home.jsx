@@ -41,7 +41,7 @@ const Home = () => {
                     <>
                         {!isError && posts.length !== 0 ? posts.map(post => (
                             <Stack key={post.id} p="4" mt="3" mb="3" borderRadius={10} border="1px solid gray">
-                                <Button isLoading={isMutated}
+                                <Button disabled={isMutated}
                                     onClick={async () => {
                                         await mutateAsync({ id: post.id })
                                     }}>Delete</Button>
