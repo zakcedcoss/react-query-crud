@@ -16,7 +16,7 @@ const Home = () => {
         onSuccess: () => {
             cache.invalidateQueries("posts")
         },
-        onError: () => {
+        onError: (error) => {
             toast({ status: "error", title: error.message, duration: 3000 })
         }
     })
